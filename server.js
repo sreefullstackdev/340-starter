@@ -9,6 +9,7 @@ const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const dotenv = require("dotenv").config()
 const static = require("./routes/static")
+const db = require("./database/db")
 
 /* App Initialization*/
 
@@ -19,6 +20,20 @@ const app = express()
 app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout") // not at views root
+app.use(express.static("public"))
+app.use(static)
+
+// Add your test route here
+app.get("/test-db", async (req, res) => {
+  try {
+    const result = await db.query("SELECT NOW()")
+    res.send(`Database time: ${result.rows[0].now}`)
+  } catch (err) {
+    console.error("Database error:", err)
+    res.status(500).send("Database connection failed")
+  }
+})
+
 
 /* ***********************
  * Routes
