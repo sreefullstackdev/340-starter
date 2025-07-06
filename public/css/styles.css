@@ -4,3 +4,96 @@
 *:after {
   box-sizing: border-box;
 }
+
+
+/* General Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1, h2 {
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 2rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.hero-image {
+  max-width: 400px;
+  margin: 1rem;
+  border-radius: 8px;
+}
+
+.hero-details {
+  max-width: 400px;
+  margin: 1rem;
+}
+
+.hero-details ul {
+  padding-left: 1.2rem;
+}
+
+.cta-button {
+  display: block;
+  margin-top: 1rem;
+  width: 200px;
+}
+
+/* Info Section */
+.info-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem;
+  background-color: #e8f0fe;
+}
+
+.reviews, .upgrades {
+  flex: 1 1 300px;
+  margin: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.reviews ul {
+  padding-left: 1.2rem;
+}
+
+.upgrade-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.upgrade-item {
+  text-align: center;
+}
+
+.upgrade-item img {
+  width: 100px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.upgrade-item a {
+  display: block;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
